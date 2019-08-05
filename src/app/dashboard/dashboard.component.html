@@ -1,2 +1,6 @@
-<!--TODO: melhorar o layout dos cards para exibir ao menos 2 por linha em telas > md, e pequenas (sm) 1 -->
-<app-card [card]="card" *ngFor="let card of cards"></app-card>
+<div class="skill-list" fxLayout="row wrap" fxLayoutAlign="space-between">
+  <app-card class="skill" fxFlex="33.33" fxFlex.lt-md="50" fxFlex.lt-sm="100" [card]="card" *ngFor="let card of cards"></app-card>
+  <div class="box-loading">
+      <div [class.loading]="loading"></div>
+  </div>
+</div>

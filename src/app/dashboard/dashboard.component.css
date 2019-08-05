@@ -1,0 +1,16 @@
+.skill-list {
+	max-width: 1280px;
+	margin: auto;
+}
+
+.skill {
+  margin-bottom: 60px;
+}
+
+.box-loading {
+	width: 50%;
+	position: fixed;
+	left: 25%;
+	top: 50%;
+	color: #e85978;
+}

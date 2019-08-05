@@ -1,4 +1,13 @@
+.logo {
+  max-width: 1280px;
+  margin: 35px auto 45px auto;
+  padding: 0 30px;
+}
+
+.logo img  {
+  width: 200px;
+}
+
 p {
   font-family: Lato;
 }
-

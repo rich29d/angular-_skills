@@ -1,2 +1,36 @@
 /* Add application styles & imports to this file! */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@keyframes spinner {
+    from {
+      transform: rotate(0) translate(-50%, -50%);
+    }
+  
+    to {
+      transform: rotate(-360deg) translate(-50%, -50%);
+    }
+  }
+  
+  .loading {
+    pointer-events: none;
+  }
+  
+  .loading .icon-button {
+    opacity: 0;
+  }
+  
+  .loading::after {
+    animation: spinner .5s linear infinite;
+    transform-origin: top left;
+    content: '';
+    position: absolute;
+    padding: 20%;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-left-color: currentColor;
+    opacity: 1;
+  }

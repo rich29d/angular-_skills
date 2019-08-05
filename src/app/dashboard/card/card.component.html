@@ -1,15 +1,35 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>{{card.name}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
+<mat-card class="card">  
+  <img [src]="card.pic" alt="Photo of a Shiba Inu">
+  
+  <mat-card-actions>
+    <button
+      mat-button
+      [matBadge]="card.likes"
+      [matBadgeHidden]="card.likes === 0"
+      matBadgePosition="above after"
+      (click)="onLike(card)"
+      [class.loading]="loading"
+      [id]="'button-' + card.id"
+    >
+      <mat-icon class="icon-button">thumb_up</mat-icon>
+      <div
+        class="background-color"
+        [class.like-5]="card.likes >= 5"
+        [class.like-10]="card.likes >= 10"
+      ></div>
+    </button>
+    
+    <button mat-button (click)="onShare()">
+        <mat-icon class="icon-button">share</mat-icon>
+        <div class="background-color"></div>
+    </button>
+  </mat-card-actions>  
+  
   <mat-card-content>
+    <mat-card-title>{{card.name}}</mat-card-title>
+    
     <p>
       {{card.description}}
     </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE {{card.likes}}</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
+  </mat-card-content>  
 </mat-card>
